@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineMarket.Data;
 
@@ -11,9 +12,11 @@ using OnlineMarket.Data;
 namespace OnlineMarket.Migrations
 {
     [DbContext(typeof(OnlineMarketDbContext))]
-    partial class OnlineMarketDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230811051419_Microsoft_Identity_Added")]
+    partial class Microsoft_Identity_Added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

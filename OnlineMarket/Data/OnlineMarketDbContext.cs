@@ -1,9 +1,11 @@
 ﻿using OnlineMarket.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace OnlineMarket.Data
 {
-    public class OnlineMarketDbContext : DbContext
+    public class OnlineMarketDbContext : IdentityDbContext<IdentityUser>
     {
         public OnlineMarketDbContext(DbContextOptions options): base(options)
         {   
@@ -97,6 +99,8 @@ namespace OnlineMarket.Data
                 .HasForeignKey(u => u.RoleId);
 
             #endregion
+
+            base.OnModelCreating(modelBuilder);
         }
 
     }
